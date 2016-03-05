@@ -182,7 +182,7 @@ Bash completion has been installed to:
 ####紧接着，把 nvm-exec 文件拷贝到创建了的 .nvm 目录里
 
 ######T-CSdeMacBook-Pro:~ t$ `cp $(brew --prefix nvm) /nvm-exec ~/.nvm/`
-###第一个方法（参考原文：[ReactNativeiOS（一）安装](http://blog.csdn.net/oiken/article/details/50016549)）：
+###第一个方法（参考：[ReactNativeiOS（一）安装](http://blog.csdn.net/oiken/article/details/50016549)）：
 ####然后要编辑 bash 配置文件 $HOME/.bashrc ,如果wq 使用你使用 zsh 那么编辑 $HOME/.zshrc 配置文件
 `nano ~/.nvm`
 
