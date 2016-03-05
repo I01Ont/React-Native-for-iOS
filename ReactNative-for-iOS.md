@@ -539,6 +539,6 @@ transforming [========================================] 100% 408/408
 
 
 
-####参考原文：[ReactNativeiOS（一）安装](http://blog.csdn.net/oiken/article/details/50016549)
+#####参考：[ReactNativeiOS（一）安装](http://blog.csdn.net/oiken/article/details/50016549)
 
 
