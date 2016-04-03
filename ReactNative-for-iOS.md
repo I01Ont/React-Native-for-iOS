@@ -1,4 +1,4 @@
-#React Native for iOS 安装过程
+#ReactNative for iOS 安装过程
 
 ###安装准备
 #####1.系统：OS X
