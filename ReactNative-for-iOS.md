@@ -6,13 +6,20 @@
 
 ####好，现在开始
 
+---
+
 ######T-CSdeMacBook-Pro:~ t$ `ruby -v`
 
 ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]
 
+---
+
 ######T-CSdeMacBook-Pro:~ t$ `pwd`
 
 /Users/t-cs
+
+---
+
 ####首先安装 Homebrew：
 ######T-CSdeMacBook-Pro:~ `t$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
@@ -22,7 +29,9 @@ ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]
 /usr/local/share/man/man1/brew.1
 
 Press RETURN to continue or any other key to abort 
+
 ######按回车
+
 ==> /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
 ######Password:
 ######输入密码******，然后按回车
@@ -53,7 +62,13 @@ HEAD is now at c99e5c4 daemon: add 0.6.4 bottle.
 ==> Next steps
 
 Run `brew help` to get started
+
+---
+
 ####好了，现在输入 `brew help` 
+
+---
+
 ######T-CSdeMacBook-Pro:~ t$` brew help`
 Example usage:
 
@@ -94,7 +109,12 @@ Further help:
   man brew
   
   brew home
+
+
+---
+
 ####使用 Homebrew 安装 nvm 
+
 ######T-CSdeMacBook-Pro:~ t$ `brew install nvm`
 ==> Downloading https://github.com/creationix/nvm/archive/v0.31.0.tar.gz
 
@@ -133,9 +153,16 @@ Bash completion has been installed to:
 ==> Summary
 
 🍺  /usr/local/Cellar/nvm/0.31.0: 6 files, 85.6K, built in 21 seconds
+
+
+---
+
 ####nvm 安装成功，但是当你输入 nvm -v 时不能调用
 ######T-CSdeMacBook-Pro:~ t$ `nvm -v`
 -bash: nvm: command not found
+
+---
+
 ####现在请按以下操作设置 shell 配置文件
 ######T-CSdeMacBook-Pro:~ t$ `brew info nvm`
 nvm: stable 0.31.0, HEAD
@@ -176,12 +203,17 @@ Bash completion has been installed to:
 
   /usr/local/etc/bash_completion.d
 
+---
+
 ####根据上面的方法，在用户根目录下创建 .nvm 文件
 ######T-CSdeMacBook-Pro:~ t$ `mkdir ~/.nvm`
 
 ####紧接着，把 nvm-exec 文件拷贝到创建了的 .nvm 目录里
 
 ######T-CSdeMacBook-Pro:~ t$ `cp $(brew --prefix nvm) /nvm-exec ~/.nvm/`
+
+---
+
 ###第一个方法（参考：[ReactNativeiOS（一）安装](http://blog.csdn.net/oiken/article/details/50016549)）：
 ####然后要编辑 bash 配置文件 $HOME/.bashrc ,如果wq 使用你使用 zsh 那么编辑 $HOME/.zshrc 配置文件
 `nano ~/.nvm`
@@ -190,11 +222,15 @@ Bash completion has been installed to:
 
 `nano ~/.nvm`
 
+---
+
 ####将下面的内容粘贴进去
 
 `export NVM_DIR=~/.nvm`
 
 `source $(brew --prefix nvm)/nvm.sh`
+
+---
 
 ####让 shell 配置及时生效
 
@@ -206,6 +242,9 @@ Bash completion has been installed to:
 `source ~/.zshrc`
 
 ####这样就不会出现关闭终端重启或重启机器后发现 node,npm 等系统环境变量失效的问题
+
+---
+
 ###第二个方法（直接进入 zsh 下操作,本人用的是第二个方法）：
 ######T-CSdeMacBook-Pro:~ t$` ZSH`
 ######T-CSdeMacBook-Pro% `export NVM_DIR=~/.nvm`
@@ -218,6 +257,9 @@ Bash completion has been installed to:
 node -> stable (-> N/A) (default)
 
 iojs -> N/A (default)
+
+---
+
 ######T-CSdeMacBook-Pro% `nvm ls-remote`
         v0.1.14
         v0.1.15
@@ -237,6 +279,7 @@ iojs -> N/A (default)
          v5.6.0
          v5.7.0
 ####接下来运行 `nvm install node $$ nvm alias default node`
+
 ######T-CSdeMacBook-Pro% `nvm install node $$ nvm alias default node`
 Downloading https://nodejs.org/dist/v5.7.0/node-v5.7.0-darwin-x64.tar.gz...
 
@@ -246,9 +289,14 @@ Now using node v5.7.0 (npm v3.6.0)
 
 Creating default alias: default -> node (-> v5.7.0)
 
+---
+
 ####安装 watchman
 ######T-CSdeMacBook-Pro% `brew search watchman`
 watchman
+
+---
+
 ######T-CSdeMacBook-Pro% `brew info watchman`
 watchman: stable 4.4.0 (bottled), HEAD
 
@@ -265,6 +313,9 @@ From: https://github.com/Homebrew/homebrew/blob/master/Library/Formula/watchman.
 Build: autoconf ✘, automake ✘
 
 Required: pcre ✘
+
+---
+
 ######T-CSdeMacBook-Pro% `brew install watchman`
 
 ==> Installing dependencies for watchman: pcre
@@ -289,8 +340,13 @@ Required: pcre ✘
 
 🍺  /usr/local/Cellar/watchman/4.4.0: 20 files, 341.5K
 
+---
+
+####查看版本
 ######T-CSdeMacBook-Pro% `watchman -v`
 4.4.0
+
+---
 
 ####安装 flow
 ######T-CSdeMacBook-Pro% 	`brew info flow`
@@ -330,8 +386,14 @@ zsh completion has been installed to:
 
 🍺  /usr/local/Cellar/flow/0.22.0: 6 files, 5.7M
 
+---
+
 ###建议定期运行 `brew update && brew upgrade` 让应用程序保持最新
+
+---
+
 ####重要时刻来了
+
 ######T-CSdeMacBook-Pro% `npm install -g react-native-cli`
 /Users/t-cs/.nvm/versions/node/v5.7.0/bin/react-native -> /Users/t-cs/.nvm/versions/node/v5.7.0/lib/node_modules/react-native-cli/index.js
 
@@ -413,6 +475,8 @@ zsh completion has been installed to:
    
   └── semver@5.1.0 
   
+  ---
+  
 ######T-CSdeMacBook-Pro% `react-native init AwesomeProject`
 This will walk you through creating a new React Native project in /Users/t-cs/AwesomeProject
 
@@ -439,7 +503,10 @@ Setting up new React Native app in /Users/t-cs/AwesomeProject
    cd /Users/t-cs/AwesomeProject
    
    react-native run-android
-   
+
+
+---
+
 ####根据上面的提示，`To run your app on iOS or Android` 
 ######运行 iOS 应用程序：
 ######在 Xcode 中打开 ios/AwesomeProject.xcodeproj 并且点击运行。
@@ -447,7 +514,7 @@ Setting up new React Native app in /Users/t-cs/AwesomeProject
 ######在选定的文本编辑器中打开 index.ios.js 并且编辑代码。
 
 ######点击 iOS 模拟器中的 ⌘-R 来重新加载应用程序。
- 
+ ---
 ####成果展示
 
 
@@ -535,10 +602,11 @@ transforming [========================================] 100% 408/408
 
 [12:00:42 PM] <END>   request:/index.ios.bundle?platform=ios&dev=true (48ms)
 
+
+
 ####本人用的方法和上文若有安装错漏等不对的地方，还请多多指教。
 
 
-
-#####参考：[ReactNativeiOS（一）安装](http://blog.csdn.net/oiken/article/details/50016549)
+####文章：[ReactNativeiOS（一）安装](http://blog.csdn.net/oiken/article/details/50016549)
 
 
